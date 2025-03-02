@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Blog Posts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+    <button id="logoutButton" onclick="logout()">Logout</button>
+    <p id="userInfo"></p>
+
+    <div id="createPost">
+      <h2>Create a Post</h2>
+      <input type="text" id="postTitle" placeholder="Title">
+      <textarea id="postContent" placeholder="Content"></textarea>
+      <button onclick="createPost()">Create Post</button>
+    </div>
+
+    <h2>All Posts</h2>
+    <div id="postList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

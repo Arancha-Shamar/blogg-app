@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  :root {
+    --bg: #fff;
+    --text: #000;
+  }
+  
+  .dark-mode {
+    --bg: #121212;
+    --text: #fff;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  input, textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  #logoutButton {
+    display: none;
+  }
+  
+  .post {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .post button {
+    margin-left: 10px;
+  }
+  
