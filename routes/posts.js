@@ -51,7 +51,7 @@ router.put('/:id', authenticateToken, async (req, res) => {
       return res.status(403).json({ message: 'You can only edit your own posts' });
     }
 
-    // Update post
+
     await pool.query(
       'UPDATE posts SET title = $1, content = $2 WHERE id = $3',
       [title, content, postId]
@@ -68,13 +68,12 @@ router.delete('/:id', authenticateToken, async (req, res) => {
   const { id: userId, role } = req.user;
 
   try {
-    // Check if post exists
     const post = await pool.query('SELECT * FROM posts WHERE id = $1', [postId]);
     if (post.rows.length === 0) {
       return res.status(404).json({ message: 'Post not found' });
     }
 
-    // Author can delete their post, Admin can delete any post
+
     if (post.rows[0].author_id !== userId && role !== 'admin') {
       return res.status(403).json({ message: 'Unauthorized to delete this post' });
     }
